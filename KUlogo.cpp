@@ -1,47 +1,44 @@
 #include<GL/glut.h>
-#include<math.h>
 void display(){
-    glClear(GL_COLOR_BUFFER_BIT);
-
+    glClear(GL_COLOR_BUFFER_BIT); // Clear The Screen And The Depth Buffer
     glColor3f(1,0,0);
 
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity(); // Reset the modelview matrix  
+    glMatrixMode(GL_MODELVIEW); 
+    glLoadIdentity();          // Reset
 
-    //str line
     glBegin(GL_LINES); //str line
-    glVertex2f(-0.34,0.38);
-    glVertex2f(-0.34,-0.40);
+    glVertex2f(-0.29,0.3);
+    glVertex2f(-0.29,-0.3);     
     glEnd();
 
+    //for U
     glTranslatef(0, 0, 0);
-    glRotatef(-30, 0, 0, 1);
+    glRotatef(-45, 0, 0, 1);
+
+     glBegin(GL_LINES); //left line
+    glVertex2f(-0.2,0.2);
+    glVertex2f(-0.2,-0.2);     
+    glEnd();
+
    
-    // lettter u
 
-    glBegin(GL_LINES); // left str line
-    glVertex2f(-0.25,0.20);
-    glVertex2f(-0.25,-0.25);
+     glBegin(GL_LINES);//middle
+    glVertex2f(-0.2,-0.2);
+    glVertex2f(0.2,-0.2);     
     glEnd();
 
-    glBegin(GL_LINES); // hori str line
-    glVertex2f(-0.25,-0.25);
-    glVertex2f(0.10,-0.35);
+     glBegin(GL_LINES);//right
+    glVertex2f(0.2,0.2);
+    glVertex2f(0.2,-0.2);     
     glEnd();
 
-    glBegin(GL_LINES); //right str line
-    glVertex2f(0.15,0.15);
-    glVertex2f(0.10,-0.35);
-    glEnd();
-    
     glFlush();
 
 }
-
-    int main(int argc, char **argv){
-        glutInit(&argc,argv);
-        glutCreateWindow("Line");
-        glutDisplayFunc(display);
-        glutMainLoop();
-        return 0;
+int main(int argc,char **argv){
+    glutInit(&argc,argv);
+    glutCreateWindow("hi");
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
 }
