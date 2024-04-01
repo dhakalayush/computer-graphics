@@ -1,6 +1,6 @@
 #include<GL/glut.h>
 void display(){
-    glClear(GL_COLOR_BUFFER_BIT); // Clear The Screen And The Depth Buffer
+    glClear(GL_COLOR_BUFFER_BIT); // Clear The  xtra Screen And The Depth Buffer
     glColor3f(1,0,0);
 
     glMatrixMode(GL_MODELVIEW); 
@@ -11,7 +11,9 @@ void display(){
     glVertex2f(-0.29,-0.3);     
     glEnd();
 
-    //for U
+    //for letter U
+
+    //rotate to -45degree z axis
     glTranslatef(0, 0, 0);
     glRotatef(-45, 0, 0, 1);
 
