@@ -1,15 +1,19 @@
 #include<GL/glut.h>
 void display(){
     glClear(GL_COLOR_BUFFER_BIT); // Clear The  xtra Screen And The Depth Buffer
-    glColor3f(1,0,0);
+    glColor3f(1,1,1);
 
-    glMatrixMode(GL_MODELVIEW); 
+    glMatrixMode(GL_PROJECTION); 
     glLoadIdentity();          // Reset
+       double aspect_ratio = glutGet(GLUT_WINDOW_WIDTH) / (double)glutGet(GLUT_WINDOW_HEIGHT);
+    glOrtho(-aspect_ratio, aspect_ratio, -1, 1, -1, 1); // Set up orthographic projection matrix
 
     glBegin(GL_LINES); //str line
-    glVertex2f(-0.29,0.3);
-    glVertex2f(-0.29,-0.3);     
+    glVertex2f(-0.32,0.3);
+    glVertex2f(-0.32,-0.3);     
     glEnd();
+
+    
 
     //for letter U
 
@@ -44,3 +48,5 @@ int main(int argc,char **argv){
     glutMainLoop();
     return 0;
 }
+
+// screeen resolution is 300x300
